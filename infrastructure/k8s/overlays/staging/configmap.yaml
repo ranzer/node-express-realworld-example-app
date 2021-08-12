@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: node-express-realworld-example-app-configmap
+data:
+  NODE_ENV=staging
+  MONGODB_URI=mongodb://mongodb_staging/conduit
