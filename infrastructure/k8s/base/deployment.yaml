@@ -4,21 +4,22 @@ metadata:
   name: node-express-realworld-example-api-service-deployment
 spec:
   selector:
-  matchLabels:
-    app: node-express-realworld-example-api-service-deployment
-  template:
-  metadata:
-    labels:
+    matchLabels:
       app: node-express-realworld-example-api-service-deployment
-  spec:
-    containers:
-    - name: node-express-realworld-example-api-service
-      image: app:multi-stage
-      ports:
-      - name: http
-        containerPort: 3000
-        protocol: TCP
+  template:
+    metadata:
+      labels:
+        app: node-express-realworld-example-api-service-deployment
+    spec:
+      containers:
+      - name: node-express-realworld-example-api-service
+        image: app:multi-stage
+        ports:
+        - name: http
+          containerPort: 3000
+          protocol: TCP
         envFrom:
         - configMapRef:
-            name: node-express-realworld-example-app-configmap
-
+            name: node-express-realworld-example-api-service-configmap
+        - secretRef:
+            name: node-express-realworld-example-api-service-secrets
