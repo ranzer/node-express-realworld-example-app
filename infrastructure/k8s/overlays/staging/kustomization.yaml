@@ -5,3 +5,10 @@ bases:
 patchesStrategicMerge:
 - hpa.yaml
 - configmap.yaml
+secretGenerator:
+- literals:
+  - secret=12345
+  name: node-express-realworld-example-api-service-secrets
+  type: Opaque
+generatorOptions:
+  disableNameSuffixHash: true
