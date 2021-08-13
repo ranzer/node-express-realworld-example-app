@@ -4,15 +4,15 @@ metadata:
   name: node-express-realworld-example-api-service-deployment-hpa
 spec:
   scaleTargetRef:
-  apiVersion: apps/v1
-  kind: Deployment
-  name: node-express-realworld-example-api-service-deployment
+    apiVersion: apps/v1
+    kind: Deployment
+    name: node-express-realworld-example-api-service-deployment
   minReplicas: 1
   maxReplicas: 2
   metrics:
   - type: Resource
-  resource:
-    name: cpu 
-    target:
-      type: Utilization
-      averageUtilization: 50
+    resource:
+      name: cpu 
+      target:
+        type: Utilization
+        averageUtilization: 50
