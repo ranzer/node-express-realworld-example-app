@@ -7,4 +7,4 @@ spec:
   - name: http
     port: 3000
   selector:
-  app: node-express-realworld-example-api-service-deployment
+    app: node-express-realworld-example-api-service-deployment
